@@ -5,43 +5,43 @@ import './index.css';
 
 
 class Square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: props.value,
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.value,
+    };
+  }
 
-    render() {
-      return (
-        <button className="square" onClick={() => this.setState({value: 'X'})}>
-          {this.state.value}
-        </button>
-      );
-    }
+  render() {
+    return (
+      <button className="square" onClick={() => this.setState({ value: 'X' })}>
+        {this.state.value}
+      </button>
+    );
+  }
 }
 
 Square.propTypes = {
-    value: PropTypes.number.isRequired
+  value: PropTypes.number.isRequired,
 };
-  
+
 class Board extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            squares: Array(9).fill(null),
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    };
+  }
 
 
-    renderSquare(i) {
-      return <Square value={i} />;
-    }
-  
-    render() {
-      const status = 'Next player: X';
-  
-      return (
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+
+  render() {
+    const status = 'Next player: X';
+
+    return (
         <div>
           <div className="status">{status}</div>
           <div className="board-row">
@@ -60,13 +60,13 @@ class Board extends React.Component {
             {this.renderSquare(8)}
           </div>
         </div>
-      );
-    }
+    );
   }
-  
-  class Game extends React.Component {
-    render() {
-      return (
+}
+
+class Game extends React.Component {
+  render() {
+    return (
         <div className="game">
           <div className="game-board">
             <Board />
@@ -76,14 +76,14 @@ class Board extends React.Component {
             <ol>{/* TODO */}</ol>
           </div>
         </div>
-      );
-    }
+    );
   }
-  
-  // ========================================
-  
-  ReactDOM.render(
+}
+
+// ========================================
+
+ReactDOM.render(
     <Game />,
-    document.getElementById('root')
-  );
-  
+    document.getElementById('root'),
+);
+
