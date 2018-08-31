@@ -5,5 +5,6 @@ module.exports = {
         "import/prefer-default-export": ["warn"],
         "no-unused-vars": ["warn"],
         "react/no-unused-state": ["warn"],
+        "no-plusplus": "off",
       }
 };

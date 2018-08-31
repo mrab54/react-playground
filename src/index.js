@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Board from './board';
@@ -48,7 +49,7 @@ class Game extends React.Component {
     squares[i] = xIsNext ? 'X' : 'O';
     this.setState({
       history: history.concat([{
-        squares: squares,
+        squares,
       }]),
       stepNumber: history.length,
       xIsNext: !xIsNext,
